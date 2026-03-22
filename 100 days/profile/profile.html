@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Dashboard</title>
+    <link rel="stylesheet" href="profile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <h2>👤 Profile Dashboard</h2>
+        <button id="backBtn">⬅ Back</button>
+    </div>
+
+    <!-- USER INFO -->
+    <div class="card">
+        <h3>User Info</h3>
+        <p><strong>Name:</strong> <span id="username">-</span></p>
+        <p><strong>Total Tasks:</strong> <span id="totalTasks">0</span></p>
+        <p><strong>Completed Tasks:</strong> <span id="completedTasks">0</span></p>
+    </div>
+
+    <!-- CURRENT TASK -->
+    <div class="card">
+        <h3>🔥 Current Task</h3>
+        <p><strong>Task:</strong> <span id="currentTask">-</span></p>
+        <p><strong>Progress:</strong> <span id="currentProgress">0/100</span></p>
+        <p><strong>Streak:</strong> <span id="currentStreak">0</span></p>
+    </div>
+
+    <!-- OVERALL STATS -->
+    <div class="card">
+        <h3>📊 Overall Stats</h3>
+        <p><strong>Total Days Completed:</strong> <span id="totalDaysDone">0</span></p>
+        <p><strong>Consistency:</strong> <span id="consistency">0%</span></p>
+    </div>
+
+    <!-- TASK LISTS -->
+    <div class="card">
+        <h3>📋 Task Overview</h3>
+
+        <div class="task-sections">
+
+            <!-- Ongoing -->
+            <div class="task-box">
+                <h4>🟢 Ongoing Tasks</h4>
+                <ul id="ongoingList"></ul>
+            </div>
+
+            <!-- Completed -->
+            <div class="task-box">
+                <h4>✅ Completed Tasks</h4>
+                <ul id="completedList"></ul>
+            </div>
+
+            <!-- Not Started -->
+            <div class="task-box">
+                <h4>⚪ Not Started</h4>
+                <ul id="notStartedList"></ul>
+            </div>
+
+        </div>
+    </div>
+    
+
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>
