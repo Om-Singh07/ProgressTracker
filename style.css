@@ -1,0 +1,250 @@
+/* =========================
+   GLOBAL
+========================= */
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f5f7fb;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+.left {
+    width: 280px;
+    background: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.left h2 {
+    margin-bottom: 10px;
+}
+
+.left h3 {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* =========================
+   TASK LIST
+========================= */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    background: #eef2ff;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+li:hover {
+    background: #e0e7ff;
+}
+
+.active-task {
+    background: #6366f1;
+    color: white;
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+.right {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+}
+
+/* =========================
+   TOP LEFT BUTTONS
+========================= */
+.top-controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+/* Buttons */
+#profileBtn,
+#logoutBtn {
+    font-size: 12px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#profileBtn {
+    background: #4f46e5;
+    color: white;
+}
+
+#logoutBtn {
+    background: #ef4444;
+    color: white;
+}
+
+/* =========================
+   CENTER HEADER
+========================= */
+.header-center {
+    text-align: center;
+    margin-top: 50px; /* pushes below buttons */
+}
+
+#selectedTaskTitle {
+    font-size: 24px;
+    color: #4f46e5;
+    margin-bottom: 5px;
+}
+
+#currentTask {
+    font-size: 14px;
+    color: #444;
+}
+
+/* =========================
+   PROGRESS TEXT
+========================= */
+#progressText {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* =========================
+   GRID
+========================= */
+#daysContainer {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+}
+
+/* Day */
+.day {
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 6px;
+    background: #e5e7eb;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.day:hover {
+    background: #c7d2fe;
+}
+
+/* States */
+.day.completed {
+    background: #4f46e5;
+    color: white;
+}
+
+.day.missed {
+    background: #ef4444;
+    color: white;
+}
+
+.day.locked {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.modal-content textarea,
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 700px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        height: 40vh;
+    }
+
+    .right {
+        height: 60vh;
+    }
+
+    #daysContainer {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .header-center {
+        margin-top: 60px;
+    }
+}
