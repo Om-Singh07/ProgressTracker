@@ -1,0 +1,33 @@
+/* Default Light Theme */
+body {
+    background-color: #ffffff;
+    color: #111111;
+    transition: all 0.3s ease;
+}
+
+/* Dark Theme */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Button Styling */
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #222;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Light mode button tweak */
+body.dark-mode .theme-btn {
+    background-color: #f1f1f1;
+    color: #111;
+}
